@@ -8,12 +8,18 @@
   </head>
   <body ng-controller="applicantController">
 	  
-    <div class="container">
-      <h1>Applicants</h1>
-      <ul id="applications" class="list-unstyled">
-        <li>Applicants should go here.</li>
+    <h1>Applicants</h1>
+    <div class="container">      
+      <ul ng-repeat="applicant in applicants">
+        <li>Name: {{applicant.name}}</li>
+        <li>Bio: {{applicant.bio}}</li>
+        <li>Skills: {{applicant.skills}}</li>
+        <li>Years Experience: {{applicant.yearsExp}}</li>
+        <li>Why Applied: {{applicant.why}}</li>
+        <li>If this applicant is not an appropriate fit: <button ng-click="deleteBtn(applicant)">Delete Applicant</button>
       </ul>
     </div>
+    <p><a href="/">Go Home</a></p>
 	  
 	<script src="/javascripts/main.js"></script>
 
